@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Star Rating</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.js"></script>
+        <script src="jquery/star-rating.js"></script>
+        <script>
+            $(document).ready(function(){
+                $("#stars-default").rating('create', {
+                    coloron: 'red',
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <p>Default Stars:</p>
+        <div id="stars-default">
+            <input type="hidden" value="1" name="rating">
+        </div>
+    </body>
+</html>

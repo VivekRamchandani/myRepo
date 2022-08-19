@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Hide And Show</title>
+        <script src="jquery/jquery.min.js"></script>
+        <script>
+            $(document).ready(function(){
+                $("#button2").hide()
+                $("#button1").click(function(){
+                    $("p").hide();
+                    $("#button1").hide();
+                    $("#button2").show();
+                });
+                $("#button2").click(function() {
+                    $("p").show();
+                    $("#button2").hide();
+                    $("#button1").show();
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <p>This is a paragraph.</p>
+        <p>This is a paragraph.</p>
+        <button id="button1">Hide</button>
+        <button id="button2">Show</button>
+    </body>
+</html>

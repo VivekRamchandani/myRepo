@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Date Picker</title>
+        <script src="jquery/jquery-3.6.0.js"></script>
+        <script src="jquery/jquery-ui.js"></script>
+        <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/humanity/jquery-ui.css">
+        <script>
+            $(document).ready(function(){
+                $("#date1").datepicker({
+                    showWeek: true,
+                    yearSuffix: " (DD/MM/YY) ",
+                    showAnim: "slide",
+                });
+                $("#date2").datepicker();
+            });
+        </script>
+    </head>
+    <body>
+        <label for="date1">Enter your DOB:</label>
+        <input type="text" id="date1" name="date1">
+        <br><br>
+        <label for="date2">Enter your DOB:</label>
+        <input type="text" id="date2" name="date2">
+    </body>
+</html>

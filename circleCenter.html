@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Cirlce Color Change</title>
+        <style>
+            * {
+                box-sizing: border-box;
+                margin: 0;
+            }
+            body {
+                display: flex;
+                width: 100vw;
+                height: 100vh;
+                justify-content: center;
+                align-items: center;
+            }
+            .circle {
+                background-color: hsl(0, 70%, 50%);
+                height: 100px;
+                width: 100px;
+                border-radius: 50%;
+            }
+        </style>
+        <script>
+            let h = 0;
+            let s = 70;
+            let l = 50;
+            function changeColor() {
+                document.getElementById("color").style.backgroundColor = `hsl(${h}, ${s}%, ${l}%)`;
+                if (h <= 355) {
+                    h += 5;
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <div id="color" class="circle" onclick="changeColor()"></div>
+    </body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Flexbox</title>
+        <style>
+            * {
+                box-sizing: border-box;
+                margin: 0;
+                padding: 0;
+            }
+            
+            body {
+                height: 100vh;
+                width: 100vw;
+            }
+            
+            .container {
+                display: inline-flex;
+                width: 1000px;
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: center;
+                background-color: white;
+            }
+
+            img {
+                width: 310px;
+                display: block;
+            }
+        </style>
+    </head>
+    <body>
+        <center>
+        <div class="container">
+            <img src="images/one.svg"><img src="images/two.svg"><img src="images/three.svg"><img src="images/four.svg"><img src="images/five.svg">
+        </div>
+        </center>
+    </body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Range</title>
+        <script src="jquery/jquery-3.6.0.js"></script>
+        <script src="jquery/jquery-ui.js"></script>
+        <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/humanity/jquery-ui.css">
+        <script>
+            $(document).ready(function(){
+                $("#ageSlider").slider({
+                    orientation: "horizontal",
+                    min: 18,
+                    max: 80,
+                    value: 19,
+                    slide: function(event, ui) {
+                        $("#age").val(ui.value);
+                    },
+                });
+                $("#age").val($("#ageSlider").slider("value"));
+                
+                $("#rangeSlider").slider({
+                    orientation: "horizontal",
+                    min: 0,
+                    max: 5000,
+                    values: [0, 100],
+                    slide: function(event, ui){
+                        $("#slide").val(ui.values[0] + " - " + ui.values[1]);
+                        $("#start").val(ui.values[0]);
+                        $("#stop").val(ui.values[1]);
+                    }
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <label for="age">Enter your Age:</label>
+        <input type="text" id="age" disabled>
+        <br><br>
+        <div id="ageSlider"></div>
+        <br><hr><br>
+        <div id="rangeSlider"></div>
+        <br><hr><br>
+        <label for="start">Minimun Value:</label>
+        <input type="text" id="start" disabled>
+        <br><br>
+        <label for="stop">Maxmimum Value:</label>
+        <input type="text" id="stop" disabled>
+        <br><br>
+        <label for="slide">Range Value:</label>
+        <input type="text" id="slide" disabled>
+    </body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Div Animation</title>
+        <style>
+            .animated {
+                display: block;
+                /* background-color: coral; */
+                height: 170px;
+                width: auto;
+                border-radius: 5px;
+            }
+        </style>
+        <script src="jquery/jquery.min.js"></script>
+        <script>
+            $(document).ready(function(){
+                $("#show").attr("disabled", true);
+                // Hide Button
+                $("#hide").click(function(){
+                    $(".animated").hide(1000);
+                    $(this).attr("disabled", true);
+                    $("#show").attr("disabled", false);
+                    $("#toggle").text("Show");
+                });
+
+                // Show Button
+                $("#show").click(function(){
+                    $(".animated").show(1000);
+                    $(this).attr("disabled", true);
+                    $("#hide").attr("disabled", false);
+                    $("#toggle").text("Hide");
+                });
+
+                // Toggle Button
+                $("#toggle").click(function(){
+                    $(".animated").toggle();
+                    if ($("#toggle").text() == "Hide") {
+                        $(this).text("Show");
+                        $("#hide").attr("disabled", true);
+                        $("#show").attr("disabled", false);     
+                    }
+                    else {
+                        $(this).text("Hide");
+                        $("#show").attr("disabled", true);
+                        $("#hide").attr("disabled", false);
+                    }
+                });
+
+                let height = parseInt($(".animated").css("height"));
+                let width = parseInt($(".animated").css("width"));
+                // Size Increase Button
+                $("#plus").click(function(){
+                    height += 10;
+                    width += 10;
+                    $(".animated").css("height", height);
+                    $(".animated").css("width", width);
+                });
+
+                // Size Decrease Button
+                $("#minus").click(function(){
+                    height -= 10;
+                    width -= 10;
+                    $(".animated").css("height", height);
+                    $(".animated").css("width", width);
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <img class="animated" src="images/image.jpg" alt="Image" title="This is an image">
+        <br>
+        <button id="hide">Hide</button>
+        <button id="show">Show</button>
+        <br><br>
+        <button id="toggle">Hide</button>
+        <br><br>
+        <button id="plus">+</button>
+        <button id="minus">-</button>
+    </body>
+</html>
